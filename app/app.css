@@ -1,0 +1,16 @@
+.drop-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  border: 5px dashed #ddd;
+  height: 400px;
+}
+
+.dragover {
+  border: 5px dashed darkslateblue;
+}
+
+.nav-tabs * {
+  cursor: pointer;
+}
