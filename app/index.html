@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AppModule">
+  <head>
+    <title>Teramind Test App</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/ngstorage/ngStorage.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/ng-file-upload/dist/ng-file-upload.js"></script>
+    <script src="app.js"></script>
+    <script src="files/files.controller.js"></script>
+    <script src="files/files.service.js"></script>
+    <script src="auth/sign-in.controller.js"></script>
+    <script src="auth/sign-up.controller.js"></script>
+    <script src="auth/auth.service.js"></script>
+    <script src="nav/nav.controller.js"></script>
+  </head>
+  <body>
+    <header
+      ng-include="'nav/nav.template.html'"
+      ng-controller="NavController"
+    ></header>
+
+    <h1 class="text-center">Teramind Test App</h1>
+
+    <div class="container-fluid">
+      <div ng-view></div>
+    </div>
+  </body>
+</html>
