@@ -7,7 +7,7 @@ angular.module("AppModule").factory("FilesService", [
     service.getFiles = function () {
       var getConfig = {
         method: "GET",
-        url: "http://localhost:3000/upload",
+        url: "http://localhost:3000/files",
       };
 
       return $http(getConfig);
@@ -15,7 +15,7 @@ angular.module("AppModule").factory("FilesService", [
 
     service.upload = function (file, callback) {
       Upload.upload({
-        url: "http://localhost:3000/upload",
+        url: "http://localhost:3000/files",
         data: { file: file },
       }).then(
         function (resp) {
