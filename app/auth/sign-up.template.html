@@ -1,0 +1,56 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Sign up</h2>
+
+  <form name="form" ng-submit="form.$valid && signUp()">
+    <div
+      class="form-group"
+      ng-class="{ 'has-error': form.$submitted && form.username.$invalid || form.username.$invalid && form.username.$touched }"
+    >
+      <label class="control-label" for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        class="form-control"
+        ng-model="username"
+        required
+      />
+      <div
+        ng-messages="form.$submitted && form.username.$error"
+        class="help-block"
+      >
+        <div ng-show="form.$submitted || form.username.$touched" ng-message="required">
+          <div ng-show="form.username.$error.required"> 
+            Username is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="form-group"
+      ng-class="{ 'has-error': form.$submitted && form.password.$invalid || form.password.$invalid && form.password.$touched }"
+    >
+      <label class="control-label" for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        ng-model="password"
+        required
+      />
+      <div
+        ng-messages="form.$submitted && form.password.$error"
+        class="help-block"
+      >
+        <div ng-message="required"></div>
+        <div ng-show="form.$submitted || form.password.$touched" ng-message="required">
+          <div ng-show="form.password.$error.required"> 
+            Password is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button ng-disabled="loading" class="btn btn-primary">Sign up</button>
+    <div ng-repeat="errorMessage in errorMessages" class="alert alert-danger">{{errorMessage}}</div>
+  </form>
+</div>
